@@ -1,22 +1,17 @@
-   
- import React, { useState } from 'react'
- const A = (props) => {
+import React from 'react';
 
-    const [line,setline] = useState(false)
-     
-     const cut = () =>{
-        setline(true)
-     }
-    
-   return (
-     
-      <>
+const A = (props) => {
+  return (
+    <>
       <div className='style'>
-     <li style={{textDecoration : line ? 'line-through' : "none"}}>{props.text}</li> <i class="fa fa-times" aria-hidden="true" onClick={cut} />
-     </div>
- 
+        <li>
+          <i className='fa fa-times' aria-hidden='true' onClick={props.onSelect} />
+          {props.text}
+        </li>
+        <i className='fa-regular fa-pen-to-square' aria-hidden='true' onClick={props.onEdit}></i>
+      </div>
     </>
-   )
- }
- 
- export default A
+  );
+};
+
+export default A;
